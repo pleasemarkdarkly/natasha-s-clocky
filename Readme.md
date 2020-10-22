@@ -4,11 +4,11 @@ GeekTool analog clock handdrawn by Natasha
 
 ![Clock](./.clock.final.png)
 
-I wanted something pretty clock-wise on my desktop. So illutrator [Natasha Pankina](https://natasha-pankina.com) drew the clock components, and the included bash file uses imagemagick to build the components into a final image as seen above.
+I wanted something pretty clock-wise on my desktop. So illustrator [Natasha Pankina](https://natasha-pankina.com) drew the clock components, and the included bash file uses Imagemagick to combine the clock components into a final image as seen above.
 
-The [clock.sh](./clock.sh) rebuilds the image from the components, and a crontab generates the image every minute. GeekTool is set up to refresh at the same interval.
+The [clock.sh](./clock.sh) computes the orientation, and crontab calls the script each minute. GeekTool is set up to refresh at the same interval.
 
-You'll want to update the paths to reflect where you put the scripts, but this is what I did in my crontab.
+You'll want to update the paths, but this is what I did.
 
 ```bash
  * * * * * cd /Users/mark.phillips/Developer/.dotfiles/np-clocky/ && sh /Users/mark.phillips/Developer/.dotfiles/np-clocky/clock.sh
@@ -30,7 +30,7 @@ Clock minute-hand
 
 ### crontab script
 
-Just to test all the paths were set properly.
+Just to test all the paths were set properly. And then remove the temporary build images.
 
 ```bash
  #!/bin/bash
